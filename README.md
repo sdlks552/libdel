@@ -29,5 +29,6 @@ del解决了文件删除后难找回的问题，它有自己的回收站，删�
 ```bash
 ln -s "./del" "Linux的bin目录/del"
 ```
+这样del就配置好了
 
 最后输入 `del` 或 `del -help` 查看帮助
