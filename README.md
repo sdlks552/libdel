@@ -23,7 +23,7 @@ git clone https://github.com/sdlks552/libdel.git
 ---
 除termux外，其他的Linux都没有兼容一键配置，不过感兴趣的话可以自己配置一下
 
-这个命令需要python解释器，所以需要先安装python。
+这个命令需要python10.0+版本的解释器，所以需要先安装python10.0+。
 
 1. 克隆仓库
 2. 解压文件
