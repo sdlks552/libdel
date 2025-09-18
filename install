@@ -1,0 +1,33 @@
+#!/bin/bash
+if [[ -d "/data/data/com.termux/files/usr/bin" && -d "/data/data/com.termux/files/usr/lib" ]];then
+  echo "软件：termux"
+  Bin_path="/data/data/com.termux/files/usr/bin/"
+  Lib_path="/data/data/com.termux/files/usr/lib/"
+else
+  echo "非termux，请查看README文件配置，暂不支持一键配置"
+  exit
+fi
+
+pkg update -y
+
+if ! command -v python;then
+  pkg install python python-pip -y
+fi
+touch ./bin/del
+echo '#!/data/data/com.termux/files/usr/bin/python' >> "./bin/del"
+chmod +x "./bin/del"
+cat "./bin/del.py" >> "./bin/del"
+rm "./bin/del.py"
+mkdir "${Lib_path}libdel"
+
+for file in *;do
+  mv "$file" "${Lib_path}libdel"
+done
+if [[ -f "${Lib_path}libdel/bin/del" ]];then
+  ln -s "${Lib_path}libdel/bin/del" "${Bin_path}del"
+  rm -rf $0
+else
+  mv "../libdel" "$HOME/"
+  rm "${Bin_path}del"
+  echo "配置失败"
+fi
