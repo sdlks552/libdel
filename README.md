@@ -7,10 +7,6 @@ del解决了文件删除后难找回的问题，它有自己的回收站，删�
 ### termux配置
 ---
 1. 先克隆仓库到home
-```bash
-git clone https://github.com/sdlks552/libdel.git
-```
-
 2. 解压压缩包
 3. cd 进入解压的目录
 4. 输入以下命令一键配置
