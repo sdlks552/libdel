@@ -13,11 +13,6 @@ pkg update -y
 if ! command -v python;then
   pkg install python python-pip -y
 fi
-touch ./bin/del
-echo '#!/data/data/com.termux/files/usr/bin/python' >> "./bin/del"
-chmod +x "./bin/del"
-cat "./bin/del.py" >> "./bin/del"
-rm "./bin/del.py"
 mkdir "${Lib_path}libdel"
 
 for file in *;do

@@ -38,7 +38,10 @@ def run(roots,pwdpath,argv_list,Trash):
     now,timems = str(time.time()).split(".")
     now = now + timems
     today = str(date.today())
-    filename = os.path.basename(str(files))
+    if os.path.isfile(files):
+      filename = os.path.basename(str(files))
+    else:
+      filename = files
     if files.startswith("/"):
       filepath = files
     else:
